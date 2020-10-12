@@ -3,7 +3,9 @@ import express from "express";
 import cors from "cors";
 import helmet from "helmet";
 
-import { rootRouter } from "./root/root.router";
+import { rootRouter } from "./routes/root/root-router";
+import { errorHandler } from "./middleware/error-middleware";
+import { notFoundHandler } from "./middleware/notfound-middleware";
 
 /**
  * Application variables
@@ -26,6 +28,12 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/", rootRouter);
+
+/*
+ * Enable own error and not found middleware
+ */
+app.use(errorHandler);
+app.use(notFoundHandler);
 
 /**
  * Application start
