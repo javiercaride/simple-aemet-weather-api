@@ -5,3 +5,6 @@ build/
 # IDE config folders
 .idea
 .vscode
+
+# Environment configuration files
+.env
