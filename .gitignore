@@ -1,0 +1,7 @@
+# Project build folders
+node_modules/
+build/
+
+# IDE config folders
+.idea
+.vscode
